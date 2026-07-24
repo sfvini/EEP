@@ -15,9 +15,12 @@ def Q17():
 	for i in range(Iteracoes):
 		porta = r.randint(0,3)
 		buraco = r.randint(1, Buracos[porta])
-		if buraco == Refugio[porta]
+		if buraco == Refugio[porta]:
 			Sucessos += 1
+			
+	print(Sucessos / Iteracoes)
 		
-if __name__ == "main":
+if __name__ == "__main__":
 	Q17()
 	pass
+

@@ -8,3 +8,11 @@ de que um parafuso selecionado aleatoriamente no final das execuções de produ�
 def Q18():
   Iteracoes = int(1e6)
   Sucessos = 0
+
+
+			
+	print(Sucessos / Iteracoes)
+		
+if __name__ == "__main__":
+	Q18()
+	pass

@@ -1,4 +1,4 @@
-import r in random
+import random as r
 '''
 Uma fábrica tem três máquinas que fixam parafusos. O percentual de operações feitas por cada
 máquina em relação ao total é de 10%, 35% e 55%, respectivamente. Além disso, sabe-se que 5%, 

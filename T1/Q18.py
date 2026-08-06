@@ -1,28 +1,25 @@
 import random as r
+import math
+
 '''
-Uma fábrica tem três máquinas que fixam parafusos. O percentual de operações feitas por cada
-máquina em relação ao total é de 10%, 35% e 55%, respectivamente. Além disso, sabe-se que 5%, 
-3% e 1% das operações das respectivas três máquinas apresentam defeito. Qual é a probabilidade 
-de que um parafuso selecionado aleatoriamente no final das execuções de produção do dia estar com falha?
+De quantas formas é possível dividir 20 pessoas:
+(a) em dois grupos de 10.
+(b) em quatro grupos de 5.
+(c) em três grupos de 6 e um de 2.
 '''
 def Q18():
-    Iteracoes = int(1e6)
-    Sucessos = 0
-    
-    for _ in range(Iteracoes):
-        maquina = r.random()
-        
-        if maquina < 0.10:
-            if r.random() < 0.05:
-                Sucessos += 1
-        elif maquina < 0.45: 
-            if r.random() < 0.03:
-                Sucessos += 1
-        else:
-            if r.random() < 0.01:
-                Sucessos += 1
+    pessoas = 20
+	a = 0
+	b = 0
+	c = 0
+                
+	a = (math.factorial(20) / math.factorial(10) * math.factorial(10)) * 1
+    b = (math.factorial(20) / math.factorial(5) * math.factorial(15)) * (math.factorial(15) / math.factorial(5) * math.factorial(10)) * (math.factorial(10) / math.factorial(5) * math.factorial(5)) * 1
+    c = (math.factorial(20) / math.factorial(6) * math.factorial(14)) * (math.factorial(14) / math.factorial(6) * math.factorial(8)) * (math.factorial(8) / math.factorial(6) * math.factorial(2)) * 1
 			
-	print(Sucessos / Iteracoes)
+	print(a)
+	print(b)
+	print(c)
 		
 if __name__ == "__main__":
 	Q18()

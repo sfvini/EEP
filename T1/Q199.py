@@ -8,20 +8,20 @@ encontre a probabilidade de ter sido produzida pela máquina C.
 '''
 def Q199():
     # Porcentagem de produção
-    pA = 0.50
-    pB = 0.30
-    pC = 0.20
+    prodA = 0.50
+    prodB = 0.30
+    prodC = 0.20
   
     # Porcentagem de defeito
-    dA = 0.03
-    dB = 0.04
-    dC = 0.05
+    defA = 0.03
+    defB = 0.04
+    defC = 0.05
+    
+    probDef = defA * prodA + defB * prodB + defC * prodC
+    probDefC = (defC * prodC) / probDef
 
-    pD = dA * pA + dB * pB + dC * pC
-    pDC = (dC * pC) / pD
-
-    print(pD)
-    print(pDC)
+    print(probDef)
+    print(probDefC)
 
 if __name__ == "__main__":
     Q199()

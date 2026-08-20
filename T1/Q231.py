@@ -1,4 +1,4 @@
-import math
+import random
 
 '''
 Um paciente foi indicado por um urologista para realizar um exame de toque retal, com o intuito
@@ -9,7 +9,7 @@ por especialista experiente, indicou positivamente o desenvolvimento de sarcoma.
 
 Considere os eventos:
 D: o paciente é acometido da doença.
-C: o paciente é diagnosticado corretamente para a doençaa a partir do exame de toque.
+C: o paciente é diagnosticado corretamente para a doença a partir do exame de toque.
 
 Um médico experiente faz o diagnóstico correto em 95% dos casos quando o sarcoma está realmente presente 
 (valor chamado sensibilidade do teste) e em 98% dos casos quando a doença não se desenvolveu (valor chamado 
@@ -18,18 +18,36 @@ resultado positivo do exame.
 '''
 
 def Q231():
-    doenca = 0.01
-    sem_doenca = 0.99
+    looping = 10000000  
+    p_doenca = 0.01
 
-    positivo_doenca = 0.95
-    positivo_sem_doenca = 0.02 # 100-98
+    positivo_com_doenca = 0.95
+    positivo_sem_doenca = 0.02  # 1.0 - 0.98
 
-# Resultado postivo do exame
-    positivo = (positivo_doenca * doenca) + (positivo_sem_doenca * sem_doenca)
+    total_positivos = 0
+    doentes_positivos = 0
 
-# Estar doente com o teste positivo
-    res = (positivo_doenca * doenca) / positivo
-    print(res)
+    for _ in range(looping):
+        
+        # Verificar se o paciente tem doença
+        tem_doenca = 0 
+        if random.random() < p_doenca:
+             tem_doenca = 1
+
+        # Probabilidade de exame positivo
+        positivo = 0
+        if tem_doenca == 1:
+            positivo = positivo_com_doenca
+        else: 
+            positivo = positivo_sem_doenca
+
+        # Faz o exame e conta os exames positivos e os casos que tem doença com exame positivo     
+        if random.random() < positivo:
+            total_positivos += 1
+            if tem_doenca == 1:
+                doentes_positivos += 1
+    
+    print(doentes_positivos / total_positivos)
 
 if __name__ == "__main__":
     Q231()

@@ -22,9 +22,12 @@ def Q231():
     sem_doenca = 0.99
 
     positivo_doenca = 0.95
-    positivo_sem_doenca = 0.02
+    positivo_sem_doenca = 0.02 # 100-98
 
+# Resultado postivo do exame
     positivo = (positivo_doenca * doenca) + (positivo_sem_doenca * sem_doenca)
+
+# Estar doente com o teste positivo
     res = (positivo_doenca * doenca) / positivo
     print(res)
 

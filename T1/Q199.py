@@ -17,7 +17,10 @@ def Q199():
     defB = 0.04
     defC = 0.05
     
+# Probabilidade do defeito 
     probDef = defA * prodA + defB * prodB + defC * prodC
+
+# Probabilidade do defeito ser na C
     probDefC = (defC * prodC) / probDef
 
     print(probDef)

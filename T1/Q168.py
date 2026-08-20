@@ -26,7 +26,7 @@ def Q42():
     c = angola / 100
     print(c)
                            
-    # d)
+    # d) PERGUNTAR
     d = angola / (100 - mocambique - ambos)
     print(d)
   

@@ -14,5 +14,7 @@ def Q42():
     res2 = math.factorial(8) / (math.factorial(2) * math.factorial(6))
     print(res2)
 
+# PERGUNTAR
+
 if __name__ == '__main__':
     Q42()

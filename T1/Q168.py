@@ -14,11 +14,11 @@ def Q42():
     mocambique = 25
     angola = 15
   
-    # a)
+    # a) somando separado e a intercessão 
     a = (ambos + mocambique + angola) / 100
     print(a)
                                
-    # b)
+    # b) excluindo do amostral a letra a 
     b = (100 - (ambos + mocambique + angola)) / 100
     print(b)
   
@@ -26,7 +26,7 @@ def Q42():
     c = angola / 100
     print(c)
                            
-    # d) PERGUNTAR
+    # d) PERGUNTAR (denominador é o complementar de Moçambique?)
     d = angola / (100 - mocambique - ambos)
     print(d)
   

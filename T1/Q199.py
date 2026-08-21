@@ -1,4 +1,5 @@
-import math
+import random
+
 '''
 Três máquinas A, B e C produzem 50%, 30% e 20%, respectivamente,
 do total de peças de uma fábrica. As porcentagens de produção defeituosa
@@ -6,25 +7,31 @@ destas máquinas são 3%, 4% e 5%. Se uma peça é selecionada aleatoriamente,
 ache a probabilidade de ela ser defeituosa. Se a peça selecionada é defeituosa,
 encontre a probabilidade de ter sido produzida pela máquina C.
 '''
+
 def Q199():
-    # Porcentagem de produção
-    prodA = 0.50
-    prodB = 0.30
-    prodC = 0.20
-  
-    # Porcentagem de defeito
-    defA = 0.03
-    defB = 0.04
-    defC = 0.05
-    
-# Probabilidade do defeito 
-    probDef = defA * prodA + defB * prodB + defC * prodC
+    looping = 1000000
+    defeito = 0
+    defeitoemc = 0
 
-# Probabilidade do defeito ser na C
-    probDefC = (defC * prodC) / probDef
+    for _ in range(looping):
+        # sorteia a maquina
+        maquina = random.randint(1, 100)
+        
+        if maquina <= 50:
+            if random.randint(1, 100) <= 3:  
+                defeito += 1
 
-    print(probDef)
-    print(probDefC)
+        elif maquina <= 80:
+            if random.randint(1, 100) <= 4:  
+                defeito += 1
+
+        else:
+            if random.randint(1, 100) <= 5:
+                defeito += 1
+                defeitoemc += 1
+
+    print(defeito / looping)
+    print(defeitoemc / defeito)
 
 if __name__ == "__main__":
     Q199()
